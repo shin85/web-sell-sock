@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+{% load humanize %}
+
+{% block title %}
+    Mua gói sock
+{% endblock title %}
+
+{% block navbar %}
+    Mua gói sock
+{% endblock navbar %}
+
+{% block content %}
+<div class="content flex-row-fluid" id="kt_content">
+    <!--begin::Pricing card-->
+    <div class="card" id="kt_pricing">
+        <!--begin::Card body-->
+        <div class="card-body p-lg-17">
+            <!--begin::Plans-->
+            <div class="d-flex flex-column">
+                <!--begin::Order success-->
+                <div class="mb-13 text-center">
+                    <h1 class="fs-2hx fw-bolder mb-5">Mua Sock5 thành công</h1>
+                </div>
+                <!--end::Order success-->
+            </div>
+            <!--end::Plans-->
+        </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Pricing card-->
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "node.NodeType",
+        "pk": 1,
+        "fields": {
+            "name": "Wan"
+        }
+    },
+    {
+        "model": "node.NodeType",
+        "pk": 2,
+        "fields": {
+            "name": "Mobile"
+        }
+    }
+]

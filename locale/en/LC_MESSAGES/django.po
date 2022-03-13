@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-22 16:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/customer/admin.py:29
+msgid "Username cannot be changed."
+msgstr ""
+
+#: apps/customer/admin.py:31
+msgid "Empty password if not change."
+msgstr ""
+
+#: apps/customer/forms.py:8 apps/customer/forms.py:59
+msgid "Username"
+msgstr ""
+
+#: apps/customer/forms.py:9
+msgid "Email"
+msgstr ""
+
+#: apps/customer/forms.py:10 apps/customer/forms.py:60
+msgid "Password"
+msgstr ""
+
+#: apps/customer/forms.py:11
+msgid "Re-Password"
+msgstr ""
+
+#: apps/customer/forms.py:17
+msgid "Username can only contain alphanumeric characters and underscores."
+msgstr ""
+
+#: apps/customer/forms.py:19
+msgid "Username must be at least 6 characters."
+msgstr ""
+
+#: apps/customer/forms.py:21
+msgid "Username already exists."
+msgstr ""
+
+#: apps/customer/forms.py:28
+msgid "Password only can contain alphanumeric characters and '_'"
+msgstr ""
+
+#: apps/customer/forms.py:30
+msgid "Password must be at least 6 characters."
+msgstr ""
+
+#: apps/customer/forms.py:38
+msgid "Password and Re-Password must be the same."
+msgstr ""
+
+#: apps/customer/forms.py:45
+msgid "Email already exists"
+msgstr ""
+
+#: apps/customer/forms.py:67
+msgid "Username does not exist."
+msgstr ""
+
+#: apps/customer/forms.py:77
+msgid "Password is incorrect."
+msgstr ""
+
+#: core/settings.py:134
+msgid "English"
+msgstr ""
+
+#: core/settings.py:135
+msgid "Vietnamese"
+msgstr ""

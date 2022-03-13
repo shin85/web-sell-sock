@@ -1,0 +1,101 @@
+{% extends 'home/base.html' %}
+{% load humanize %}
+
+{% block title %}
+    Mua gói sock
+{% endblock title %}
+
+{% block navbar %}
+    Mua gói sock
+{% endblock navbar %}
+
+{% block content %}
+<div class="content flex-row-fluid" id="kt_content">
+    <!--begin::Pricing card-->
+    <div class="card" id="kt_pricing">
+        <!--begin::Card body-->
+        <div class="card-body p-lg-17">
+            <!--begin::Plans-->
+            <div class="d-flex flex-column">
+                <!--begin::Billing Order-->
+                <div class="card">
+                    <!--begin::Card header-->
+                    <div class="card-header card-header-stretch border-bottom border-gray-200">
+                        <!--begin::Title-->
+                        <div class="card-title">
+                            <h3 class="fw-bolder m-0">Thông tin gói Sock</h3>
+                        </div>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Show form.errors-->
+                    {% if order_form.errors %}
+                        {% for field in order_form %}
+                            {% for error in field.errors %} 
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                    <!--end::Show form.errors-->
+                    <!--begin::Tab Content-->
+                    <div class="tab-content">
+                        <!--begin::Tab panel-->
+                        <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel" aria-labelledby="kt_billing_months">
+                            <!--begin::Table container-->
+                            <div class="table-responsive">
+                                <!--begin::Table-->
+                                <table class="table table-row-bordered align-middle gy-4 gs-9">
+                                    <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
+                                        <tr>
+                                            <td class="min-w-250px text-center">Tên gói Sock</td>
+                                            <td class="min-w-150px text-center">Thời gian sử dụng / sock</td>
+                                            <td class="min-w-150px text-center">Sử dụng tối thiểu</td>
+                                            <td class="min-w-150px text-center">Giá</td>
+                                            <td class="text-center">Số lượng</td>
+                                            <td class="text-center">Mua</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fw-bold text-gray-600">
+                                        <!--begin::Table row-->
+                                        <form action="{% url 'order:order' plan.id %}" method="POST">
+                                            {% csrf_token %}
+                                            {{ order_form.plan_id }}
+                                            <tr>
+                                                <td class="text-center">{{ plan.name }}</td>
+                                                <td class="text-center">
+                                                    {% if plan.duration == 0 %}
+                                                        Không giới hạn
+                                                    {% else %}
+                                                        {{plan.duration}} phút
+                                                    {% endif %}
+                                                </td>
+                                                <td class="text-center">{{ plan.time_min }} phút</td>
+                                                <td class="text-center">{{ plan.price|intcomma:False }}</td>
+                                                <td class="text-center">{{ order_form.amount }}</td>
+                                                <td class="text-center">
+                                                    <button type="submit" class="btn btn-sm btn-light btn-active-light-primary">Mua</button>
+                                                </td>
+                                            </tr>
+                                        </form>
+                                        <!--end::Table row-->
+                                    </tbody>
+                                </table>
+                                <!--end::Table-->
+                            </div>
+                            <!--end::Table container-->
+                        </div>
+                        <!--end::Tab panel-->
+                    </div>
+                    <!--end::Tab Content-->
+                </div>
+                <!--end::Billing Order-->
+            </div>
+            <!--end::Plans-->
+        </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Pricing card-->
+</div>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends 'customer/base.html' %}
+{% block title %}Đăng ký{% endblock title %}
+{% block content %}
+<div class="login-form">
+    <!--begin::Form-->
+    <form action="{% url 'customer:register' %}" method="POST" id="kt_login_signup_form" class="form">
+        {% csrf_token %}
+        <!--begin::Title-->
+        <div class="pb-13 pt-lg-0 pt-5">
+            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Đăng ký</h3>
+            <p class="text-muted font-weight-bold font-size-h4">Nhập thông tin đăng ký</p>
+        </div>
+        <!--end::Title-->
+        <!--begin::Error alert-->
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %} 
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <!--end::Error alert-->
+        <!--begin::Form group-->
+        <div class="form-group">
+            {{ form.username}}
+        </div>
+        <!--end::Form group-->
+        <!--begin::Form group-->
+        <div class="form-group">
+            {{ form.email}}
+        </div>
+        <!--end::Form group-->
+        <!--begin::Form group-->
+        <div class="form-group">
+            {{ form.password}}
+        </div>
+        <!--end::Form group-->
+        <!--begin::Form group-->
+        <div class="form-group">
+            {{ form.password_re}}
+        </div>
+        <!--end::Form group-->
+        <!--begin::Form group-->
+        <div class="form-group">
+            <label class="checkbox mb-0">
+                <input type="checkbox" checked name="agree" />
+                <span></span>
+                <div class="ml-2">Tôi đồng ý với các  
+                <a href="#">điều khoản và chính sách</a>.</div>
+            </label>
+        </div>
+        <!--end::Form group-->
+        <!--begin::Form group-->
+        <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
+            <button type="submit" id="kt_login_signup_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Đăng ký</button>
+            <button type="button" onclick="location.href='{% url 'customer:login' %}';" id="kt_login_signup_cancel" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Huỷ</button>
+        </div>
+        <!--end::Form group-->
+    </form>
+    <!--end::Form-->
+</div>
+{% endblock content %}
